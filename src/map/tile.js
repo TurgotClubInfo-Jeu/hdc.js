@@ -14,8 +14,12 @@ class Tile
         phaser.load.image(sprite, spriteUrl);
     }
 
-    draw(phaser)
+    /**
+     * @param {*} phaser
+     * @param {Vector2} pos
+     */
+    draw(phaser, pos)
     {
-        phaser.add.image(this.sprite);
+        phaser.add.sprite(pos.x, pos.y, this.sprite);
     }
 }
