@@ -1,7 +1,7 @@
 class Tile
 {
     /**  @type string */
-    sprite
+    Sprite
 
     /**
      * @param {*} phaser 
@@ -10,7 +10,7 @@ class Tile
      */
     constructor (phaser, sprite, spriteUrl) 
     {
-        this.sprite = sprite;
+        this.Sprite = sprite;
         phaser.load.image(sprite, spriteUrl);
     }
 
@@ -20,6 +20,6 @@ class Tile
      */
     draw(phaser, pos)
     {
-        phaser.add.sprite(pos.x, pos.y, this.sprite);
+        phaser.add.sprite(pos.x, pos.y, this.Sprite);
     }
 }
