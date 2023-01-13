@@ -14,6 +14,13 @@ class Map
     /** @type Character[] */
     Characters
 
+    /** @type Map */
+    static Instance
+    /** @type int */
+    static tileSize
+    /** @type Vector2 */
+    static offset
+
     /** 
      * @param {string} map representing tile 
      * @param bytes of  
@@ -21,6 +28,7 @@ class Map
     */
     constructor(map, tileMap, Characters)
     {
+        Instance
         this.Map = map;
         this.tileMap = tileMap;
         this.Characters = Characters;
@@ -37,5 +45,21 @@ class Map
             this.Characters[i].update(phaser);
             this.Characters[i].draw(phaser);
         }
+    }
+
+    /** 
+     * @param {Vector2} pos
+     */
+    MapToCanvas(pos)
+    {
+        return offset.plus(pos.times(tileSize));
+    }
+
+    /** 
+     * @param {Vector2} pos
+     */
+    CanvasToMap(pos)
+    {
+        return pos.add(offset.negate()).times(1 / tileSize);
     }
 } 
