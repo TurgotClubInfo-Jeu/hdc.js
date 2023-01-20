@@ -1,4 +1,6 @@
-
+import Character from "Character.js"
+import Tile from "Tile.js"
+import Vector2 from "Vector2.js";
 
 class Map
 {
@@ -14,8 +16,6 @@ class Map
     /** @type Character[] */
     Characters
 
-    /** @type Map */
-    static Instance
     /** @type int */
     static tileSize
     /** @type Vector2 */
@@ -28,7 +28,6 @@ class Map
     */
     constructor(map, tileMap, Characters)
     {
-        Instance
         this.Map = map;
         this.tileMap = tileMap;
         this.Characters = Characters;
@@ -38,12 +37,12 @@ class Map
     {
         for (let x = 0; x < this.Map.length; x++)
             for (let y = 0; y < this.Map[x].length; y++)
-                TileTypes[this.Map[x][y]].draw(phaser, new Vector2(x, y));
+                TileTypes[this.Map[x][y]].draw(phaser, this, new Vector2(x, y));
 
         for (let i = 0; i < this.Characters.length; i++)
         {
-            this.Characters[i].update(phaser);
-            this.Characters[i].draw(phaser);
+            this.Characters[i].update(phaser, this);
+            this.Characters[i].draw(phaser, this);
         }
     }
 

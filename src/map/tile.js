@@ -1,3 +1,5 @@
+import { Map } from "Map.js";
+
 class Tile
 {
     /**  @type string */
@@ -17,9 +19,11 @@ class Tile
     /**
      * @param {*} phaser
      * @param {Vector2} pos
+     * @param {Map} map
      */
-    draw(phaser, pos)
+    draw(phaser, map, pos)
     {
-        phaser.add.sprite(pos.x, pos.y, this.Sprite);
+        canvasPos = map.MapToCanvas(pos);
+        phaser.add.sprite(canvasPos.x, canvasPos.y, this.Sprite);
     }
 }
