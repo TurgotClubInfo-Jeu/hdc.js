@@ -1,6 +1,6 @@
-import { Map } from "Map.js";
+import Map from "@/map";
 
-class Tile
+export default class Tile
 {
     /**  @type string */
     Sprite
@@ -21,9 +21,8 @@ class Tile
      * @param {Vector2} pos
      * @param {Map} map
      */
-    draw(phaser, map, pos)
+    draw(phaser, pos)
     {
-        canvasPos = map.MapToCanvas(pos);
-        phaser.add.sprite(canvasPos.x, canvasPos.y, this.Sprite);
+        phaser.add.sprite(pos.x, pos.y, this.Sprite);
     }
 }

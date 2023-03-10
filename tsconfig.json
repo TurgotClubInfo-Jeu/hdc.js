@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "strict": true,
+
+    "allowJs": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  
+  "include": ["src"]
+}

@@ -3,6 +3,16 @@
 
 ## Développement
 
-On utilise l'extension Live Preview pour voir en temps réel le fichier `/index.html`.
+```bash
+# Clone
+git clone https://github.com/TurgotClubInfo-Jeu/hdc.js
 
-Le code principal de l'application JS se trouve dans `/src/index.js`.
+# Installer les dépendances
+pnpm install
+
+# Démarrer le serveur de développement
+pnpm dev # sur `http://localhost:3000`
+
+# Build pour la production
+pnpm build # dans `/dist`
+```
